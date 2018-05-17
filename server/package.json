@@ -1,0 +1,29 @@
+{
+  "name": "tesco-price-watch-server",
+  "description": "Weather API for React example app",
+  "author": "Alex Crooks",
+  "version": "0.1.0",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --exec 'serverless offline start --port 3001 --stage dev' -e 'js'",
+    "deploy": "serverless deploy --stage live --aws-profile example",
+    "tail": "serverless logs -f app -t --stage live --aws-profile example",
+    "metrics": "serverless metrics --stage live --aws-profile example"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "morgan": "^1.9.0",
+    "mysql": "^2.15.0",
+    "object-get": "^2.1.0",
+    "serverless-http": "^1.5.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.1",
+    "serverless": "^1.26.1",
+    "serverless-offline": "^3.18.0"
+  }
+}
