@@ -1,4 +1,4 @@
-### Client (React)
+# Client (React)
 
 A simple weather temperature fetching app is used to demonstrate the following techniques in React:
 
@@ -8,21 +8,21 @@ A simple weather temperature fetching app is used to demonstrate the following t
 * **Styling** - How to pair css styling with individual components in your application using `styled-components`
 * **API** - How to connect to a simple API to fetch and save data.
 
-#### Getting started
+## Getting started
 
 * Install the Chrome [React Developer Tools extension](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
 * Install the Chrome [Redux DevTools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en) in order to view and debug changes to the global state
 * In order to deploy the React or Lambda API you will need AWS credentials in `~./aws/credentials`. 
 
-We will use the profile `example` here.
+We will use the profile `siaws` here.
 ```
-[example]
+[siaws]
 aws_region=eu-west-1
 aws_access_key_id=xxxx
 aws_secret_access_key=xxxx
 ```
 
-#### NPM Scripts
+## NPM Scripts
 
 `npm start`
 

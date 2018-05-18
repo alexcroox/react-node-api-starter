@@ -7,9 +7,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon --exec 'serverless offline start --port 3001 --stage dev' -e 'js'",
-    "deploy:dev": "serverless deploy --stage dev --aws-profile example",
-    "tail:dev": "serverless logs -f app -t --stage dev --aws-profile example",
-    "metrics:dev": "serverless metrics --stage dev --aws-profile example"
+    "deploy:dev": "serverless deploy --stage dev --aws-profile siaws",
+    "tail:dev": "serverless logs -f app -t --stage dev --aws-profile siaws",
+    "metrics:dev": "serverless metrics --stage dev --aws-profile siaws"
   },
   "dependencies": {
     "axios": "^0.18.0",

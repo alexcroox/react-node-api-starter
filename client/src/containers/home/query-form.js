@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form, Field } from 'formik'
+import { Form } from 'formik'
 import TextInput from '../../components/text-input'
 import Button from '../../components/button'
 

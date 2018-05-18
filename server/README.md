@@ -1,22 +1,22 @@
-### Server (Express Lambda)
+# Server (Express Lambda)
 
 A simple weather API to demonstrate routes and correct responses tailored to deployment in Lambda.
 
 It uses the serverless framework to automate the creation of AWS configs, deployment and versioning of Lambda and code backup in S3.
 
-#### Getting started
+## Getting started
 
 * In order to deploy to AWS you will need credentials in `~./aws/credentials`. 
 
-We will use the profile `example` here.
+We will use the profile `siaws` here.
 ```
-[example]
+[siaws]
 aws_region=eu-west-1
 aws_access_key_id=xxxx
 aws_secret_access_key=xxxx
 ```
 
-#### NPM Scripts
+## NPM Scripts
 
 `npm run dev`
 

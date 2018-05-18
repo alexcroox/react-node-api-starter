@@ -7,8 +7,6 @@ import storage from '../lib/storage'
 // ==============================
 const SET_LOCATION = 'example/weather/SET_LOCATION'
 const CLEAR_LOCATION = 'example/weather/CLEAR_LOCATION'
-const SET_FETCHING = 'example/weather/SET_FETCHING'
-const CREATE_QUERY_RESPONSE = 'example/weather/CREATE_QUERY_RESPONSE'
 const SET_LOCATION_TEMP = 'example/weather/SET_LOCATION_TEMP'
 
 const initialState = {

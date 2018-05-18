@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Switch, Route } from 'react-router-dom'
-import { Provider } from 'react-redux'
 import { ConnectedRouter } from 'react-router-redux'
 import history from '../../modules/history'
 

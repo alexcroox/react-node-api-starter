@@ -29,6 +29,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy:dev": "react-scripts build && aws s3 sync build/ s3://devdomain.com"
+    "deploy:dev": "react-scripts build && aws s3 sync build/ s3://example-react --profile siaws"
   }
 }
