@@ -1,5 +1,5 @@
 {
-  "name": "tesco-price-watch-server",
+  "name": "weather-api",
   "description": "Weather API for React example app",
   "author": "Alex Crooks",
   "version": "0.1.0",
