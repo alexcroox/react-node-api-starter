@@ -2,11 +2,12 @@ import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import * as Yup from 'yup'
 import { Formik } from 'formik'
-import { fetchWeather } from '../../modules/weather'
+import { fetchWeather, clearLocation } from '../../modules/weather'
 import QueryForm from './query-form'
 import Section from '../../components/section'
 import Header from '../../components/header'
 import Title from '../../components/title'
+import Button from '../../components/button'
 
 const queryFormInitialValues = {
   query: ''
@@ -25,8 +26,8 @@ class Home extends Component {
     this.onQueryFormSubmit = this.onQueryFormSubmit.bind(this)
 
     // Do we already have a locationId? Lets fetch the latest weather
-    if (this.props.locationId)
-      this.props.fetchWeather(this.props.locationId)
+    if (this.props.location)
+      this.props.fetchWeather(this.props.location)
   }
 
   onQueryFormSubmit = async (values, { setSubmitting, setErrors }) => {
@@ -46,10 +47,13 @@ class Home extends Component {
         <Header />
 
         <Section>
-          {this.props.locationTemp ? (
-            <Title>
-              The temperature in {this.props.location} is {this.props.locationTemp}
-            </Title>
+          {this.props.locationTemp && this.props.location ? (
+            <Fragment>
+              <Title>
+                The temperature in {this.props.location} is {this.props.locationTemp}
+              </Title>
+              <Button onClick={this.props.clearLocation}>Lookup new location</Button>
+            </Fragment>
           ) : (
             <Fragment>
               <Title>Lookup temperature in your area</Title>
@@ -69,7 +73,8 @@ class Home extends Component {
 }
 
 const mapDispatchToProps = {
-  fetchWeather
+  fetchWeather,
+  clearLocation
 }
 
 const mapStateToProps = state => ({

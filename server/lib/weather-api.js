@@ -4,7 +4,7 @@ const objectGet = require('object-get')
 class weatherApi {
   constructor() {
     this.request = axios.create({
-      baseURL: 'http://samples.openweathermap.org/data/2.5/',
+      baseURL: 'https://api.openweathermap.org/data/2.5/',
       timeout: 10000,
       headers: {
         'Accept': 'application/json'
@@ -14,12 +14,14 @@ class weatherApi {
 
   fetchWeather (query) {
     return new Promise((resolve, reject) => {
-      this.request.get(`/weather/q=${query}&APPID=${process.env.WEATHER_API_KEY}`)
+      this.request.get(`/weather?q=${query}&APPID=${process.env.WEATHER_API_KEY}`)
         .then(response => {
-          let temp = objectGet(response, 'main.temp')
+          let temp = objectGet(response, 'data.main.temp')
+
+          console.log('Temp', temp)
 
           if (temp)
-            resolve(temp)
+            resolve({temp})
           else
             throw "No temp for that location"
         })

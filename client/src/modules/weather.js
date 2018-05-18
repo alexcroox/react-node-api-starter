@@ -6,6 +6,7 @@ import storage from '../lib/storage'
 // Actions
 // ==============================
 const SET_LOCATION = 'example/weather/SET_LOCATION'
+const CLEAR_LOCATION = 'example/weather/CLEAR_LOCATION'
 const SET_FETCHING = 'example/weather/SET_FETCHING'
 const CREATE_QUERY_RESPONSE = 'example/weather/CREATE_QUERY_RESPONSE'
 const SET_LOCATION_TEMP = 'example/weather/SET_LOCATION_TEMP'
@@ -21,6 +22,11 @@ export default produce(
       case SET_LOCATION:
         draft.location = action.location
         storage.save('location', action.location)
+        return
+
+      case CLEAR_LOCATION:
+        draft.location = null
+        storage.delete('location')
         return
 
       case SET_LOCATION_TEMP:
@@ -43,6 +49,10 @@ export const setLocationTemp = temp => ({
   temp
 })
 
+export const clearLocation = () => ({
+  type: CLEAR_LOCATION
+})
+
 
 // ==============================
 // SIDE EFFECTS
@@ -53,8 +63,9 @@ export const fetchWeather = query => async dispatch => {
   return new Promise((resolve, reject) => {
     api.request.get(`/query/${query}`)
       .then(response => {
-        if (response.temp) {
-          dispatch(setLocation(response.location))
+        if (response.data.temp) {
+          dispatch(setLocation(query))
+          dispatch(setLocationTemp(response.data.temp))
           resolve()
         } else {
           throw new Error("No temp found in response")
