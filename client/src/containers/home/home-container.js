@@ -21,8 +21,6 @@ class Home extends Component {
   constructor (props) {
     super(props)
 
-    this.state = {}
-
     this.onQueryFormSubmit = this.onQueryFormSubmit.bind(this)
 
     // Do we already have a locationId? Lets fetch the latest weather

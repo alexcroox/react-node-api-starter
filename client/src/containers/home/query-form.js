@@ -16,6 +16,7 @@ const QueryForm = ({
     <TextInput
       type="text"
       name="query"
+      placeholder="E.g portsmouth"
     />
     {errors.query && touched.query && <div>{errors.query}</div>}
     <Button primary onClick={handleSubmit} loading={isSubmitting}>
