@@ -23,7 +23,7 @@ class Home extends Component {
 
     this.onQueryFormSubmit = this.onQueryFormSubmit.bind(this)
 
-    // Do we already have a locationId? Lets fetch the latest weather
+    // Do we already have a location? Lets fetch the latest weather
     if (this.props.location)
       this.props.fetchWeather(this.props.location)
   }
